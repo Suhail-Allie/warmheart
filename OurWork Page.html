@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Warm Hearts Charity - Our work includes coat collection, sorting, and distribution to help children in need.">
+    <meta name="keywords" content="charity, coat collection, community support, donations, warm hearts">
+    <meta name="author" content="Warm Hearts Charity">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Warm Hearts - Our Work</title>
+    <style>
+        /* Back to Top Button Styling */
+        .back-to-top {
+            position: fixed;
+            bottom: 70px;
+            right: 10px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            display: none; /* Initially hidden */
+            transition: background-color 0.3s;
+        }
+
+        .back-to-top:hover {
+            background-color: #777777;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><i><b> ~ WARM HEARTS ~ </b></i></h1>
+        <h1><u>OUR WORK</u></h1>
+
+        <nav>
+            <a href="index.html">HOME PAGE</a> |
+            <a href="AboutUs Page.html">ABOUT US</a> |
+            <a href="OurWork Page.html">OUR WORK</a> |
+            <a href="Impact Page.html">IMPACT</a> |
+            <a href="Donations.html">DONATIONS</a> |
+            <a href="ContactUs Page.html">CONTACT US</a>
+        </nav>
+    </header>
+
+    <div class="boxed">
+        <p><b><u>HOW WARM HEARTS WORK</u></b></p>
+    </div>
+
+    <div class="bubble">
+        <p><b><u>Coat Collection</u></b></p>
+        <p><b>Donation Bins:</b> We place donation bins in easily accessible locations such as schools, libraries, and community centers to make it easy for people to contribute.</p>
+        <p><b>Coat Drive Events:</b> We organize events where community members can donate coats and more, creating a sense of unity and purpose around this cause.</p>
+    </div>
+
+    <div class="bubble">
+        <p><b><u>Sorting and Cleaning</u></b></p>
+        <p><b>Volunteer Support:</b> Our dedicated volunteers sort the donated coats by size and condition, ensuring that each coat is suitable for distribution.</p>
+        <p><b>Cleaning:</b> Coats that require cleaning are washed to ensure they are ready for use, maintaining the sanitation and comfort of the recipients.</p>
+    </div>
+
+    <div class="bubble">
+        <p><b><u>Distribution</u></b></p>
+        <p><b>Collaborative Effort:</b> We work closely with local schools, shelters, and community organizations to distribute coats directly to children in need.</p>
+        <p><b>Targeted Reach:</b> By partnering with these organizations, we ensure that the coats are delivered to those who need them the most, maximizing our impact.</p>
+    </div>
+
+    <div>
+        <img src="/Images/testpictu.jpg" alt="Children receiving warm coats from Warm Hearts Charity" width="800" height="400">
+        <p><i>IT'S THE SMILE THAT COUNTS</i></p>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Warm Hearts Charity. All rights reserved.</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">Back to Top</button>
+
+    <script>
+        // Dynamic year stamp in footer
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+        // Back to Top Button Functionality
+        const backToTopButton = document.getElementById("backToTop");
+
+        // Show or hide the button based on scroll position
+        window.onscroll = function () {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+
+        // Scroll to the top of the document
+        backToTopButton.onclick = function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
+</body>
+</html>

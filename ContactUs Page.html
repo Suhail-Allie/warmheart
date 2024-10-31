@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warm Hearts - Contact Us</title>
+    <meta name="description" content="Warm Hearts Charity provides winter clothing to children in need. Contact us for volunteer opportunities and support.">
+    <meta name="keywords" content="Warm Hearts, charity, contact, donation, support, children, community">
+
+    <style>
+        /* Back to Top Button Styling */
+        .back-to-top {
+            position: fixed;
+            bottom: 70px;
+            right: 10px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            display: none;
+            transition: background-color 0.3s;
+        }
+
+        .back-to-top:hover {
+            background-color: #777777;
+        }
+
+        /* Contact Form Styling */
+        form {
+            margin: 20px auto;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        form label, form input, form select, form textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            font-size: 1em;
+        }
+
+        form input[type="submit"] {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #777777;
+        }
+
+        .bubble {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 15px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "NonProfitOrganization",
+        "name": "Warm Hearts Charity",
+        "url": "https://www.warmheartscharity.org",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+27-74-527-5726",
+            "contactType": "Customer Service"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "20 Main Road, Rosebank",
+            "addressLocality": "Cape Town",
+            "postalCode": "7700",
+            "addressCountry": "South Africa"
+        }
+    }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1><i><b> ~ WARM HEARTS ~ </b></i></h1>
+        <h1><u>CONTACT US</u></h1>
+        <nav>
+            <a href="index.html">HOME PAGE</a> |
+            <a href="AboutUs Page.html">ABOUT US</a> |
+            <a href="OurWork Page.html">OUR WORK</a> |
+            <a href="Impact Page.html">IMPACT</a> |
+            <a href="Donations.html">DONATIONS</a> |
+            <a href="ContactUs Page.html">CONTACT US</a>
+        </nav>
+    </header>
+    
+    <main>
+        <div>
+            <img src="/Images/WarmHearts.jpg" alt="Warm Hearts Charity" width="850px" height="350px">
+            <p><i>'WARM HEARTS: KEEPING CHILDREN WARM & HEALTHY'</i></p>
+        </div>
+        
+        <section>
+            <h2>Contact Us</h2>
+            <form id="contactForm" action="mailto:suhailallie7@gmail.com" method="post" enctype="text/plain">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="Your Name" onclick="clearField(this)">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="Your Email" onclick="clearField(this)">
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" value="Your Phone Number" onclick="clearField(this)">
+
+                <label for="inquiry">Inquiry About:</label>
+                <select id="inquiry" name="inquiry">
+                    <option value="Donation">Donation</option>
+                    <option value="Volunteer">Volunteer Work</option>
+                    <option value="Event">Event Participation</option>
+                    <option value="General">General Inquiry</option>
+                </select>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" onclick="clearField(this)">Type your message here...</textarea>
+
+                <input type="submit" value="Submit" onclick="return validateForm()">
+            </form>
+        </section>
+
+        <section>
+            <h2>Our Location</h2>
+            <p><b>20 Main Road, Rosebank, Cape Town, 7700, South Africa</b></p>
+            <p><b>CALL US ON ~ 074 527 5726</b></p>
+            <p><b>EMAIL US ON ~ ST10455559@rcconnect.edu.za</b></p>
+        </section>
+
+        <div class="bubble">
+            <p>Feel free to reach out to us for any further information about Warm Hearts, Enquiries, Questions, Volunteer Work, New Initiatives, or even Our Story.</p>
+            <p>From Warm Hearts, we <b>Thank You</b> for your Support, Efforts, Intentions, Donations, Love, and Support.</p>
+            <p><b><i>WARM HEARTS</i></b></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Warm Hearts Charity. All rights reserved.</p>
+        <p><a href="PrivacyPolicy.html">Privacy Policy</a> | <a href="TermsOfService.html">Terms of Service</a></p>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">Back to Top</button>
+
+    <script>
+        // Back to Top Button Functionality
+        const backToTopButton = document.getElementById("backToTop");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+
+        backToTopButton.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        // Clear field on click
+        function clearField(field) {
+            if (field.defaultValue === field.value) {
+                field.value = "";
+            }
+        }
+
+        // Form validation
+        function validateForm() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+
+            if (name === "" || name === "Your Name") {
+                alert("Please enter your name.");
+                return false;
+            }
+            
+            if (email === "" || email === "Your Email") {
+                alert("Please enter your email.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

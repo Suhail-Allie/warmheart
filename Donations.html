@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Warm Hearts Charity - Making a difference through donations to keep children warm and healthy.">
+    <meta name="keywords" content="charity, donations, children, warm hearts, support">
+    <meta name="author" content="Warm Hearts Charity">
+    <title>Thank You for Your Donation | Warm Hearts Charity</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Include your CSS file -->
+    <style>
+        /* Back to Top Button Styling */
+        .back-to-top {
+            position: fixed;
+            bottom: 70px;
+            right: 10px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            display: none; /* Initially hidden */
+            transition: background-color 0.3s;
+        }
+
+        .back-to-top:hover {
+            background-color: #777777;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1><i><b>~ WARM HEARTS ~</b></i></h1>
+        <h2><u>MAKE A DONATION</u></h2>
+
+        <nav>
+            <a href="index.html">HOME PAGE</a> |
+            <a href="AboutUs Page.html">ABOUT US</a> |
+            <a href="OurWork Page.html">OUR WORK</a> |
+            <a href="Impact Page.html">IMPACT</a> |
+            <a href="Donations.html">DONATIONS</a> |
+            <a href="ContactUs Page.html">CONTACT US</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Thank You for Your Donation!</h1>
+        <p>Your generosity is helping us keep children warm and healthy. Together, we are making a difference!</p>
+        
+        <section>
+            <h2>Donation Information</h2>
+            <form action="mailto:suhailallie7@gmail.com" method="post" enctype="text/plain">
+                <fieldset>
+                    <legend>Donation Details</legend>
+                    
+                    <p>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </p>
+
+                    <p>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </p>
+
+                    <p>
+                        <label for="amount">Donation Amount:</label>
+                        <input type="number" id="amount" name="amount" required min="1" step="any">
+                    </p>
+
+                    <p>
+                        <label for="message">Message (optional):</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Your message or comment..."></textarea>
+                    </p>
+                    
+                    <p>
+                        <label for="package-type">Preferred Method of Support:</label>
+                        <select id="package-type" name="package-type" required>
+                            <option value="one-time-donation">One-time Donation</option>
+                            <option value="monthly-donation">Monthly Donation</option>
+                            <option value="in-kind-donation">In-Kind Donation</option>
+                        </select>
+                    </p>
+                </fieldset>
+
+                <button type="submit" class="submit-btn">Submit</button>
+                <button type="reset" class="clear-btn">Clear</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Warm Hearts Charity. All rights reserved.</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">Back to Top</button>
+
+    <script>
+        // Dynamic year stamp in footer
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+        // Back to Top Button Functionality
+        const backToTopButton = document.getElementById("backToTop");
+
+        // Show or hide the button based on scroll position
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+
+        // Scroll to the top of the document
+        backToTopButton.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
+</body>
+</html>

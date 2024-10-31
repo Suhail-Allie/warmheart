@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Warm Hearts</title>
+
+    <style>
+        /* Back to Top Button Styling */
+        .back-to-top {
+            position: fixed;
+            bottom: 70px;
+            right: 10px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            display: none; /* Initially hidden */
+            transition: background-color 0.3s;
+        }
+
+        .back-to-top:hover {
+            background-color: #777777;
+        }
+    </style>
+
+</head>
+
+<body style="text-align: center;">
+
+    <header>
+        <h1><i><b> ~ WARM HEARTS ~ </b></i></h1>
+        <h1><u>ABOUT US</u></h1>
+    </header>
+
+    <nav>
+        <a href="index.html">HOME PAGE</a> |
+        <a href="AboutUs Page.html">ABOUT US</a> |
+        <a href="OurWork Page.html">OUR WORK</a> |
+        <a href="Impact Page.html">IMPACT</a> |
+        <a href="Donations.html">DONATIONS</a> |
+        <a href="ContactUs Page.html">CONTACT US</a>
+    </nav>
+
+    <section>
+
+        <div>
+            <img src="Images/testpict.jpg" alt="Image 1" width="450px" height="350px">
+            <img src="/Images/testpicc.jpg" alt="Image 2" width="450px" height="350px">
+            <p><i>'THE DIFFERENCE YOU CAN MAKE'</i></p>
+        </div>
+
+        
+        <h2><u>ABOUT WARM HEARTS</u></h2>
+
+<p class="info-box">
+    Warm Hearts is a community initiative dedicated to ensuring that children in need
+     have access to warm winter coats, helping them stay healthy and attend school regularly. By 
+     collecting both gently used and new coats, Warm Hearts supports families who struggle to provide
+      adequate winter clothing for their children. This effort not only addresses immediate needs but
+       also fosters a caring community that looks out for its most vulnerable members.
+    </p>
+
+        
+ 
+        <h2><u>OUR VISION AND OUR GOALS</u></h2> 
+   
+        <!-- OUR VISION BOX -->
+
+        <div class="bubble"> 
+            <h3><i><b>OUR VISION</b></i></h3>
+            <p>Warm Hearts envisions a community where every child has the necessary clothing to stay warm and healthy during the cold winter months.</p>
+        </div>
+
+        <!-- OUR GOALS BOX -->
+
+        <div class="bubble">
+            <h3><i><b>OUR GOALS</b></i></h3>
+            <p>We aim to gather around 1,000 coats each winter season to distribute to children in need. By offering free winter coats, we reduce the financial burden on families, ensuring no child must face the cold unprotected. Our efforts promote community involvement, foster support among residents, and encourage everyone to care for our children. Warm Hearts is more than just a coat drive—it's a movement to ensure that every child can face winter with warmth and health. By working together, we can make a significant difference in our community, one coat at a time.</p>
+        </div>
+        
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Warm Hearts Charity. All rights reserved.</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">Back to Top</button>
+
+<script>
+    // Back to Top Button Functionality
+const backToTopButton = document.getElementById("backToTop");
+
+// Show or hide the button based on scroll position
+window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopButton.style.display = "block";
+    } else {
+        backToTopButton.style.display = "none";
+    }
+};
+
+// Scroll to the top of the document
+backToTopButton.onclick = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+</script>
+
+</body>
+
+</html>

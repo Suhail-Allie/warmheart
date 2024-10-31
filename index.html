@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Warm Hearts is a charity dedicated to providing winter clothing to children in need, ensuring they stay warm and healthy during the cold months.">
+    <title>Warm Hearts Charity - Keeping Children Warm & Healthy</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* Countdown Timer Styling */
+        .countdown-timer {
+            font-size: 1.5em;
+            color: #000000;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .event-date, .countdown {
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        /* Footer Styling */
+        .footer {
+            background-color: #000000;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #ffffff;
+        }
+
+        /* Button Styling */
+        button {
+            background-color: #ff0000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            background-color: #777777;
+        }
+
+        /* Back to Top Button Styling */
+        .back-to-top {
+            position: fixed;
+            bottom: 70px;
+            right: 10px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            display: none;
+            transition: background-color 0.3s;
+        }
+
+        .back-to-top:hover {
+            background-color: #777777;
+        }
+
+        /* Newsletter Pop-up Styling */
+        .newsletter-popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ff0000;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.2s;
+            font-size: 1em;
+        }
+
+        .newsletter-popup:hover {
+            transform: scale(1.05);
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><i><b> ~ WARM HEARTS ~ </b></i></h1>
+        <h2><u>HOME PAGE</u></h2>
+        <nav>
+            <a href="index.html">HOME PAGE</a> |
+            <a href="AboutUs Page.html">ABOUT US</a> |
+            <a href="OurWork Page.html">OUR WORK</a> |
+            <a href="Impact Page.html">IMPACT</a> |
+            <a href="Donations.html">DONATIONS</a> |
+            <a href="ContactUs Page.html">CONTACT US</a>
+        </nav>
+    </header>
+
+    <main>
+        <img src="/Images/WarmHearts.jpg" alt="Warm Hearts charity logo featuring a heart symbol" width="600" height="300">
+        <h2>KEEPING CHILDREN WARM & HEALTHY</h2>
+        <p><a href="Donations.html"><button>DONATE</button></a></p>
+
+        <!-- Countdown Timer Section -->
+        <div id="countdown-timer" class="countdown-timer">
+            <p>Upcoming Event: <span id="event-date" class="event-date"></span></p>
+            <p>Event starts in: <span id="countdown" class="countdown"></span></p>
+        </div>
+
+        <p><i>'WE CAN START MAKING A CHANGE TOGETHER'</i></p>
+        <img src="/Images/TESTPIC.jpg" alt="Happy children wearing warm coats" width="600" height="300">
+        
+        <section class="mission">
+            <b><u>OUR MISSION</u></b><br>
+            <p>Warm Hearts helps families facing winter clothing shortages by 
+            providing gently used and unused coats to local schools and community
+            centers. By doing so, we reduce health issues, decrease school absences,
+            and alleviate the discomfort of children during the cold winter months.
+            Our initiative ensures that coats reach those who need them the most,
+            making a tangible difference in the lives of children and their families.
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; <span id="currentYear"></span> Warm Hearts Charity. All rights reserved.</p>
+        <p>Today is: <span id="currentDate"></span></p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">Back to Top</button>
+
+    <!-- Newsletter Pop-up Button -->
+    <div class="newsletter-popup" onclick="openNewsletterForm()">
+        Receive Newsletter
+    </div>
+
+    <!-- JavaScript for Dynamic Date, Countdown Timer, and Back to Top Button -->
+    <script>
+        // Dynamic year stamp in footer
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+        // Get the current date
+        const today = new Date();
+        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+        const formattedDate = today.toLocaleDateString("en-US", options).replace(',', '');
+        const [day, month, year] = formattedDate.split(" ");
+        document.getElementById("currentDate").textContent = `${day} ${month} ${year}`;
+
+        // Set the date for the upcoming event
+        const eventDate = new Date("Dec 25, 2024 10:00:00").getTime();
+        const formattedEventDate = new Date(eventDate).toLocaleString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit"
+        });
+        document.getElementById("event-date").textContent = formattedEventDate;
+
+        // Countdown timer for the upcoming event
+        const countdownFunction = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "Event has started!";
+            }
+        }, 1000);
+
+        // Back to Top Button Functionality
+        const backToTopButton = document.getElementById("backToTop");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+        backToTopButton.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        // Function to open Google form in a new tab
+        function openNewsletterForm() {
+            window.open("https://docs.google.com/forms/d/e/1FAIpQLSfI9Miv9SNVRFW30A-IeuMzW0Nzvt7pRkG4eU6Rb8cALv6Txw/viewform?embedded=true", "_blank");
+        }
+    </script>
+</body>
+</html>
